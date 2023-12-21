@@ -34,15 +34,19 @@ const { title } = Astro.props;
     --jaguar-700: #4b03a1;
     --jaguar-800: #400785;
     --jaguar-900: #3a0c6e;
-    --jaguar-950: #050109;
+    --jaguar-950: #13151a;
   }
   html {
     color: white;
     font-family: "Poppins", sans-serif;
-    background: #13151a;
+    background: var(--jaguar-950);
   }
   body{
 	margin: 0;
 	padding: 0;
+  }
+
+  body::-webkit-scrollbar{
+    display: none;
   }
 </style>

@@ -1,0 +1,132 @@
+---
+import IconCard from "./IconCard.astro";
+
+interface Props {
+  imagen: string;
+  icon: string[];
+  link? : string
+}
+
+const { imagen, icon, link } = Astro.props;
+---
+
+<article class="card__article">
+  <img src={imagen} alt="image" class="card__img" />
+  <div class="card__data">
+    <span class="card__description">Tecnologias Usadas</span>
+    <span class="card__icon">
+        <IconCard icons={icon} />
+    </span>
+    <a href={link} class="card__button">Visitar!</a>
+  </div>
+</article>
+
+<style>
+  .card__article {
+    width: auto;
+    height: auto;
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card__img {
+    object-fit: cover;
+    object-position: center;
+    width: 22rem;
+    height: 15rem;
+    border-radius: 1.5rem;
+  }
+
+  .card__data {
+    display: grid;
+    text-align: center;
+    width: 200px;
+    height: auto;
+    background-color: var(--jaguar-950);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+    gap: 1rem;
+  }
+
+  .card__description {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: 0.25rem;
+  }
+
+  .card__button {
+    color: var(--jaguar-100);
+    text-decoration: none;
+    background: var(--jaguar-500);
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+  }
+
+  .card__article:hover .card__data {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  .card__article:hover {
+    animation: remove-overflow 2s forwards;
+  }
+
+  .card__article:not(:hover) {
+    animation: show-overflow 2s forwards;
+  }
+
+  .card__article:not(:hover) .card__data {
+    animation: remove-data 1s forwards;
+  }
+
+  @keyframes show-data {
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(-7rem);
+    }
+  }
+
+  @keyframes remove-overflow {
+    to {
+      overflow: initial;
+    }
+  }
+
+  @keyframes remove-data {
+    0% {
+      transform: translateY(-7rem);
+    }
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(0.5rem);
+    }
+  }
+
+  @keyframes show-overflow {
+    0% {
+      overflow: initial;
+      pointer-events: none;
+    }
+    50% {
+      overflow: hidden;
+    }
+  }
+</style>

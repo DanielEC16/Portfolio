@@ -1,0 +1,29 @@
+---
+interface Props {
+  icons: string[];
+}
+const { icons } = Astro.props;
+---
+
+<div class="icon-card">
+  {
+    icons.map((icon, index) => (
+      <img src={`../../public/icons/${icon}.png`} class="icon" alt={icon} />
+    ))
+  }
+</div>
+
+<style>
+  .icon-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  img {
+    width: 27px;
+    height: 27px;
+    object-fit: cover;
+    border-radius: 5px;
+    object-position: center;
+  }
+</style>
