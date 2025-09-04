@@ -1,0 +1,72 @@
+---
+interface Props {
+  tittle: String;
+}
+
+const { tittle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="logo.webp" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>{tittle}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global lang="scss">
+  @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Source+Sans+3:wght@700;900&display=swap");
+
+  :root {
+    --jaguar-50: rgb(248, 240, 255);
+    --jaguar-100: rgb(239, 224, 254);
+    --jaguar-200: rgb(216, 186, 253);
+    --jaguar-300: rgb(179, 125, 252);
+    --jaguar-400: rgb(134, 56, 248);
+    --jaguar-500: rgb(104, 14, 233);
+    --jaguar-600: rgb(89, 2, 199);
+    --jaguar-700: rgb(75, 3, 161);
+    --jaguar-800: rgb(64, 7, 133);
+    --jaguar-900: rgb(58, 12, 110);
+    --jaguar-950: rgb(19, 21, 26);
+    /* Valores RGB separados (para usar en rgba()) */
+    --jaguar-50-rgb: 248, 240, 255;
+    --jaguar-100-rgb: 239, 224, 254;
+    --jaguar-200-rgb: 216, 186, 253;
+    --jaguar-300-rgb: 179, 125, 252;
+    --jaguar-400-rgb: 134, 56, 248;
+    --jaguar-500-rgb: 104, 14, 233;
+    --jaguar-600-rgb: 89, 2, 199;
+    --jaguar-700-rgb: 75, 3, 161;
+    --jaguar-800-rgb: 64, 7, 133;
+    --jaguar-900-rgb: 58, 12, 110;
+    --jaguar-950-rgb: 19, 21, 26;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* html {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    background: var(--jaguar-950);
+  } */
+  body {
+    background-color: var(--jaguar-950);
+  }
+  body::-webkit-scrollbar{
+    display: none;
+  }
+</style>

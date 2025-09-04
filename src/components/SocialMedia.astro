@@ -1,0 +1,50 @@
+---
+import gmailIcon from "../assets/gmail.svg";
+import githubIcon from "../assets/github.svg";
+import linkedinIcon from "../assets/linkedin.svg";
+---
+<div class="bar_social_media">
+    <a
+      href="https://github.com/DanielEC16"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={githubIcon.src} alt="" />
+    </a>
+    <a
+      href="https://github.com/DanielEC16"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={gmailIcon.src} alt="" />
+    </a>
+    <a
+      href="https://github.com/DanielEC16"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={linkedinIcon.src} alt="" />
+    </a>
+  </div>
+
+  <style lang="scss">
+  .bar_social_media {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--jaguar-200);
+    padding: 5px 30px 0;
+    border-radius: 30px;
+    display: flex;
+    gap: 1rem;
+    z-index: -1;
+    display: none;
+    a {
+      text-decoration: none;
+    }
+    img {
+      width: 3rem;
+    }
+  }
+</style>
